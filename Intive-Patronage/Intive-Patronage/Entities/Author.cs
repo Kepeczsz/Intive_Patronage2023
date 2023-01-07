@@ -1,19 +1,25 @@
-﻿namespace Intive_Patronage.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Intive_Patronage.Entities
 {
-    public class Author
-    {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public bool Gender { get; set; }
+   public class Author
+   {
+      public int AuthorId { get; set; }
 
-        public List<BookAuthor> BookAuthor { get; set; } = new List<BookAuthor>();
+      [MaxLength(50)]
+      [Required]
+      public string FirstName { get; set; }
 
-        public Author(string firstName, string lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
-    }
+      [MaxLength(50)]
+      [Required]
+      public string LastName { get; set; }
+
+      [Required]
+      public DateTime BirthDate { get; set; }
+
+      [Required]
+      public bool Gender { get; set; }
+
+      public ICollection<BookAuthor>? BookAuthors { get; set; }
+   }
 }

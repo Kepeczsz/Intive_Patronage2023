@@ -3727,11 +3727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
+      "projectUniqueName": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
       "projectName": "Intive-Patronage",
-      "projectPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
+      "projectPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
       "packagesPath": "C:\\Users\\sm49416\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive-Patronage\\Intive-Patronage\\obj\\",
+      "outputPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sm49416\\AppData\\Roaming\\NuGet\\NuGet.Config",

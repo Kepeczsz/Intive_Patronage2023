@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "prjAg5G6Vz1QXrMNpMM3KG08+V9bJV9HDLLy9R/8561sZHwqbKPd4/1kRdCI62EcOnyF47bfdejHufGgtWU5cA==",
+  "dgSpecHash": "ML0jpEjMd9JPbfAyZ0w908K8W46xU2X2fQfI12wuCmtDDOqZL0CXDp7xOo6YnhXuex9cC0v9QbaT0R2DTY7FbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
+  "projectFilePath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sm49416\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sm49416\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

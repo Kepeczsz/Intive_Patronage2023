@@ -16,4 +16,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\sm49416\Desktop\projekt\Intive_Patronage2023\Intive-Patronage\Intive-Patronage\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\sm49416\Desktop\projekt\Intive_Patronage2023\Intive-Patronage\Intive-Patronage\.editorconfig" />
+  </ItemGroup>
+
 </Project>

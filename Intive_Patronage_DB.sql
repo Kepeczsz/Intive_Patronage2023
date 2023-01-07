@@ -2,7 +2,7 @@ CREATE DATABASE Intive_Patronage;
 USE Intive_Patronage;
 
 CREATE TABLE Book(
-  Id int IDENTITY(1,1) PRIMARY KEY,
+  BookId int IDENTITY(1,1) PRIMARY KEY,
   Title NVARCHAR(100) Not Null,
   Description NVARCHAR(MAX) Not Null,
   Rating decimal Not null,
@@ -11,7 +11,7 @@ CREATE TABLE Book(
 );
 
 CREATE TABLE Author(
-Id int IDENTITY(1,1) PRIMARY KEY,
+AuthorId int IDENTITY(1,1) PRIMARY KEY,
 FirstName NVARCHAR(50) Not Null,
 LastName NVARCHAR(50) Not Null,
 BirthDate Datetime2 Not Null,
@@ -19,7 +19,8 @@ Gender bit Not Null
 );
 
 CREATE TABLE BookAuthor (
-    AuthorId int FOREIGN KEY REFERENCES Author(Id),
-    BookId int FOREIGN KEY REFERENCES Book(Id)
+	BookAuthorId int IDENTITY(1,1) PRIMARY KEY,
+    BookId INT NOT NULL FOREIGN KEY REFERENCES Book(BookId),
+    AuthorId INT NOT NULL FOREIGN KEY REFERENCES Author(AuthorId),
 );
-  
+

@@ -12,7 +12,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<LibraryDbContext>();
 builder.Services.AddScoped<AuthorController>();
-builder.Services.AddScoped<BookAuthorController>();
 builder.Services.AddScoped<BookController>();
 
 var app = builder.Build();
@@ -20,8 +19,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+   app.UseSwagger();
+   app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
