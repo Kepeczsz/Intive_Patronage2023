@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿using System.ComponentModel.DataAnnotations; 
 namespace Intive_Patronage.Entities
 {
    public class Author
@@ -8,10 +7,16 @@ namespace Intive_Patronage.Entities
 
       [MaxLength(50)]
       [Required]
+      [RegularExpression("^[A-Z][a-z]+",
+         ErrorMessage = "your name need to start with Capital Letter, can not contain numbers" +
+         " and can be no longer than 50 characters")]
       public string FirstName { get; set; }
 
       [MaxLength(50)]
       [Required]
+      [RegularExpression("^[A-Z][a-z]+",
+         ErrorMessage = "your Surname need to start with Capital Letter, can not contain numbers" +
+         " and can be no longer than 50 characters")]
       public string LastName { get; set; }
 
       [Required]

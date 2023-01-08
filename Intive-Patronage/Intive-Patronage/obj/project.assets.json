@@ -3727,9 +3727,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
-      "projectName": "Intive-Patronage",
-      "projectPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\Intive-Patronage.csproj",
+      "projectUniqueName": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\IntivePatronage.csproj",
+      "projectName": "IntivePatronage",
+      "projectPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\IntivePatronage.csproj",
       "packagesPath": "C:\\Users\\sm49416\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\sm49416\\Desktop\\projekt\\Intive_Patronage2023\\Intive-Patronage\\Intive-Patronage\\obj\\",
       "projectStyle": "PackageReference",

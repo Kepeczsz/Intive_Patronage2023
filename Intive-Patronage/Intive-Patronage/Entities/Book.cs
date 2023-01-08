@@ -15,6 +15,7 @@ namespace Intive_Patronage.Entities
       public string Description { get; set; }
 
       [Required]
+      [RegularExpression("[0-9]+[/\\-\\.]?", ErrorMessage = "Rating can not contain letters")]
       public decimal Rating { get; set; }
 
       [MaxLength(13)]
@@ -23,6 +24,7 @@ namespace Intive_Patronage.Entities
 
       [Required]
       public DateTime PublicationDate { get; set; }
-      public ICollection<BookAuthor> BookAuthors { get; set; }
+
+      public ICollection<BookAuthor>? BookAuthors { get; set; }
    }
 }
