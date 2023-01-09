@@ -1,6 +1,8 @@
 ﻿using Intive_Patronage.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
+
 namespace Intive_Patronage.Controllers
 {
    [Route("[controller]")]
@@ -62,33 +64,34 @@ namespace Intive_Patronage.Controllers
       }
 
       [HttpPost]
-      public ActionResult<Book> AddBook(int AuthorId, [FromBody] Book book)
+      public ActionResult<Book> AddBook(string AuthorId, [FromBody] Book book)
       {
-         var author = _libraryDbContext.Author.Find(AuthorId);
-         if (author is null)
+         // Validate the view model
+         if (!ModelState.IsValid)
          {
-            return BadRequest();
+            return BadRequest(ModelState);
          }
-         book.BookAuthors = new List<BookAuthor>
-    {
-        new BookAuthor
-        {
-            Author = author
-        }
-    };
-         var bookAuthor = new BookAuthor
-         {
-            Author = author,
-            Book = book,
-         };
-         if (ModelState.IsValid)
-         {
-            _libraryDbContext.Book.Add(book);
-            _libraryDbContext.BookAuthor.Add(bookAuthor);
-            _libraryDbContext.SaveChanges();
-            return Created($"/Book/{book.BookId}", null);
-         }
-         return BadRequest();
+         if (!Regex.IsMatch(AuthorId, @"^\d+(,\d+)*$"))
+            return BadRequest("AuthorId can not contain letters!");
+
+         // Split the list of author IDs into an array
+         int[] authorIds = AuthorId.Split(',').Select(int.Parse).ToArray();
+
+         // Retrieve the authors from the database
+         var authors = _libraryDbContext.Author.Where(a => authorIds.Contains(a.AuthorId)).ToList();
+         if(!authors.Any())
+            return BadRequest("There was not any authors with given id");
+         
+         book.BookAuthors = authors.Select(a => new BookAuthor { Author = a }).ToList();
+         
+
+         // Add the book and book-author relationships to the database
+         _libraryDbContext.Book.Add(book);
+         _libraryDbContext.BookAuthor.AddRange(book.BookAuthors);
+         _libraryDbContext.SaveChanges();
+
+         // Return the created book
+         return Created($"/Book/{book.BookId}", null);
       }
    }
 }

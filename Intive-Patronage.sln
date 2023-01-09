@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntivePatronageApp", "src\Application\IntivePatronageApp.csproj", "{BE97E732-F3AF-446C-8670-5D4F6358C8FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorTest", "tests\Model\AuthorTest\AuthorTest.csproj", "{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorTest", "tests\Model\AuthorTest.UnitTests\AuthorTest.csproj", "{137731B3-4A2C-493E-BAEC-A671B8FC05A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
