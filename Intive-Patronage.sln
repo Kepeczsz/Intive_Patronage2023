@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntivePatronageApp", "src\Application\IntivePatronageApp.csproj", "{BE97E732-F3AF-446C-8670-5D4F6358C8FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorTest", "tests\Model\AuthorTest\AuthorTest.csproj", "{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE97E732-F3AF-446C-8670-5D4F6358C8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E4F42B-EE0F-463C-8BD7-FE04B1B33CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A584B011-450D-41D6-B0B4-C65BCE4A2373}
+	EndGlobalSection
+EndGlobal
