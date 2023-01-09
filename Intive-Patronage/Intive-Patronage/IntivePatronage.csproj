@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Intive_Patronage</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
@@ -15,13 +13,10 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
-
   <ItemGroup>
     <EditorConfigFiles Remove="C:\Users\sm49416\Desktop\projekt\Intive_Patronage2023\Intive-Patronage\Intive-Patronage\.editorconfig" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="C:\Users\sm49416\Desktop\projekt\Intive_Patronage2023\Intive-Patronage\Intive-Patronage\.editorconfig" />
   </ItemGroup>
-
 </Project>

@@ -10,20 +10,15 @@ namespace TestProject1
         {
             AuthorTestsMethods authorTests = new AuthorTestsMethods();
             Author author = new Author();
-
             author.FirstName = "Andrzej";
-
             Assert.IsTrue(authorTests.checkFirstName(author));
         }
-
         [TestMethod]
         public void CheckLastName_ReturnsTrue()
         {
             AuthorTestsMethods authorTests = new AuthorTestsMethods();
             Author author = new Author();
-
             author.LastName = "Slimak";
-
             Assert.IsTrue(authorTests.checkLastName(author));
         }
     }
