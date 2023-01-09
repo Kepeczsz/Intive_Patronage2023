@@ -11,6 +11,7 @@ namespace Intive_Patronage.Controllers
       {
          _libraryDbContext = libraryDbContext;
       }
+
       [HttpPost]
       public ActionResult<Author> AddAuthor([FromBody] Author author)
       {
@@ -22,12 +23,14 @@ namespace Intive_Patronage.Controllers
          }
          return BadRequest();
       }
+
       [HttpGet]
       public ActionResult<IEnumerable<Author>> GetAuthors()
       {
          var authors = _libraryDbContext.Author.ToList();
          return Ok(authors);
       }
+
       [HttpGet]
       [Route("GetAuthorsByName")]
       public ActionResult<IEnumerable<Author>> GetAuthorsByName(string name)

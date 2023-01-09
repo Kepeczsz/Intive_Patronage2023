@@ -12,12 +12,14 @@ namespace Intive_Patronage.Controllers
       {
          _libraryDbContext = libraryDbContext;
       }
+
       [HttpGet]
       public ActionResult<IEnumerable<Book>> GetBooks()
       {
          var books = _libraryDbContext.Book;
          return Ok(books);
       }
+
       [HttpPut]
       public ActionResult<Book> UpdateBook(int Id, string newTitle)
       {
@@ -34,6 +36,7 @@ namespace Intive_Patronage.Controllers
          }
          return BadRequest();
       }
+
       [HttpDelete("{id}")]
       public ActionResult<Book> DeleteBook([FromRoute] int id)
       {
@@ -46,6 +49,7 @@ namespace Intive_Patronage.Controllers
          _libraryDbContext.SaveChanges();
          return Ok();
       }
+
       [HttpGet("{id}")]
       public ActionResult<Book> FindBook([FromRoute] int id)
       {
@@ -56,6 +60,7 @@ namespace Intive_Patronage.Controllers
          }
          return Ok(book);
       }
+
       [HttpPost]
       public ActionResult<Book> AddBook(int AuthorId, [FromBody] Book book)
       {
