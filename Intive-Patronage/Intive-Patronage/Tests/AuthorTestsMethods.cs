@@ -1,5 +1,4 @@
 ﻿using Intive_Patronage.Entities;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Intive_Patronage.Tests
 {
@@ -10,7 +9,7 @@ namespace Intive_Patronage.Tests
       public bool checkFirstName(Author author)
       {
          var firstName = author.FirstName;
-         if(firstName.Length > 50 || firstName.Length <= 1 
+         if (firstName.Length > 50 || firstName.Length <= 1
             || !Char.IsUpper(firstName[0]) || firstName.Any(char.IsDigit))
             return false;
 

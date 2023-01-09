@@ -8,7 +8,7 @@ namespace TestProject1
         [TestMethod]
         public void CheckFirstName_ReturnsTrue()
         {
-            AuthorTestsMethods authorTests= new AuthorTestsMethods();
+            AuthorTestsMethods authorTests = new AuthorTestsMethods();
             Author author = new Author();
 
             author.FirstName = "Andrzej";

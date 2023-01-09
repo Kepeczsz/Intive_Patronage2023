@@ -38,18 +38,16 @@ namespace Intive_Patronage.Controllers
       [Route("GetAuthorsByName")]
       public ActionResult<IEnumerable<Author>> GetAuthorsByName(string name)
       {
-         List<Author> authors = new List<Author>();
-         foreach (Author author in _libraryDbContext.Author)
-         {
-            if (author.FirstName == name)
-            {
-               authors.Add(author);
-            }
-         }
-         if (authors.Count > 0)
-         {
+
+
+         var authors =
+       from a in _libraryDbContext.Author
+       where a.FirstName == name
+       select a;
+
+         if(authors.Any())
             return Ok(authors);
-         }
+
          return NotFound("There wasn't any author with that name");
       }
    }
