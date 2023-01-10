@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntivePatronageApp", "src\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorTest", "tests\Model\AuthorTest.UnitTests\AuthorTest.csproj", "{137731B3-4A2C-493E-BAEC-A671B8FC05A7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "src\Domain\Models\Models.csproj", "{D74C9900-E5CD-4A5C-A516-8C00FDF9F40F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{137731B3-4A2C-493E-BAEC-A671B8FC05A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74C9900-E5CD-4A5C-A516-8C00FDF9F40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74C9900-E5CD-4A5C-A516-8C00FDF9F40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74C9900-E5CD-4A5C-A516-8C00FDF9F40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74C9900-E5CD-4A5C-A516-8C00FDF9F40F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

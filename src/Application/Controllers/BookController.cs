@@ -1,4 +1,6 @@
-﻿using Intive_Patronage.Entities;
+﻿using FluentValidation.Results;
+using Intive_Patronage.Entities;
+using Intive_Patronage.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
@@ -10,6 +12,8 @@ namespace Intive_Patronage.Controllers
    public class BookController : ControllerBase
    {
       private readonly LibraryDbContext _libraryDbContext;
+      private BookValidator  validator = new BookValidator();
+
       public BookController(LibraryDbContext libraryDbContext)
       {
          _libraryDbContext = libraryDbContext;
@@ -66,10 +70,10 @@ namespace Intive_Patronage.Controllers
       [HttpPost]
       public ActionResult<Book> AddBook(string AuthorId, [FromBody] Book book)
       {
-         if (!ModelState.IsValid)
-         {
-            return BadRequest(ModelState);
-         }
+         ValidationResult results = validator.Validate(book);
+         if (!results.IsValid)
+            return BadRequest(results.Errors.ToString());
+
          if (!Regex.IsMatch(AuthorId, @"^\d+(,\d+)*$"))
             return BadRequest("AuthorId can not contain letters!");
          // Split the list of author IDs into an array

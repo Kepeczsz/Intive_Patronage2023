@@ -20,4 +20,7 @@
   <ItemGroup>
     <None Include="C:\Users\sm49416\Desktop\projekt\Intive_Patronage2023\Intive-Patronage\Intive-Patronage\.editorconfig" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Models\Models.csproj" />
+  </ItemGroup>
 </Project>
