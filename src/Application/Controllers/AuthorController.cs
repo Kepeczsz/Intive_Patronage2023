@@ -2,6 +2,8 @@
 using Intive_Patronage.Entities;
 using Intive_Patronage.Validators;
 using Microsoft.AspNetCore.Mvc;
+using Models.DbSets;
+
 namespace Intive_Patronage.Controllers
 {
    [Route("[controller]")]

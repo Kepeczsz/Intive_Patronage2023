@@ -1,5 +1,6 @@
 using Intive_Patronage.Controllers;
-using Intive_Patronage.Entities;
+using Models.DbSets;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
