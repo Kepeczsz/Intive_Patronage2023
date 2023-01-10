@@ -20,13 +20,12 @@ namespace Intive_Patronage.Controllers
       public ActionResult<Author> AddAuthor([FromBody] Author author)
       {
          ValidationResult results = validator.Validate(author);
-         if (results.IsValid)
-         {
-            _libraryDbContext.Author.Add(author);
-            _libraryDbContext.SaveChanges();
-            return Ok();
-         }
-         return BadRequest(results.Errors);
+         if (!results.IsValid)
+            return BadRequest(results.Errors.ToString());
+
+         _libraryDbContext.Author.Add(author);
+         _libraryDbContext.SaveChanges();
+         return Ok();
       }
 
       [HttpGet]
