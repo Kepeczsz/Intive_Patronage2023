@@ -66,30 +66,23 @@ namespace Intive_Patronage.Controllers
       [HttpPost]
       public ActionResult<Book> AddBook(string AuthorId, [FromBody] Book book)
       {
-         // Validate the view model
          if (!ModelState.IsValid)
          {
             return BadRequest(ModelState);
          }
          if (!Regex.IsMatch(AuthorId, @"^\d+(,\d+)*$"))
             return BadRequest("AuthorId can not contain letters!");
-
          // Split the list of author IDs into an array
          int[] authorIds = AuthorId.Split(',').Select(int.Parse).ToArray();
-
          // Retrieve the authors from the database
          var authors = _libraryDbContext.Author.Where(a => authorIds.Contains(a.AuthorId)).ToList();
          if(!authors.Any())
             return BadRequest("There was not any authors with given id");
-         
          book.BookAuthors = authors.Select(a => new BookAuthor { Author = a }).ToList();
-         
-
          // Add the book and book-author relationships to the database
          _libraryDbContext.Book.Add(book);
          _libraryDbContext.BookAuthor.AddRange(book.BookAuthors);
          _libraryDbContext.SaveChanges();
-
          // Return the created book
          return Created($"/Book/{book.BookId}", null);
       }
