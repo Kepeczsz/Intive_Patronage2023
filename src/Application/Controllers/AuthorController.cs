@@ -1,4 +1,6 @@
-﻿using Intive_Patronage.Entities;
+﻿using FluentValidation.Results;
+using Intive_Patronage.Entities;
+using Intive_Patronage.Validators;
 using Microsoft.AspNetCore.Mvc;
 namespace Intive_Patronage.Controllers
 {
@@ -7,6 +9,8 @@ namespace Intive_Patronage.Controllers
    public class AuthorController : ControllerBase
    {
       private readonly LibraryDbContext _libraryDbContext;
+      private AuthorValidator validator = new AuthorValidator();
+      
       public AuthorController(LibraryDbContext libraryDbContext)
       {
          _libraryDbContext = libraryDbContext;
@@ -15,13 +19,14 @@ namespace Intive_Patronage.Controllers
       [HttpPost]
       public ActionResult<Author> AddAuthor([FromBody] Author author)
       {
-         if (_libraryDbContext.Database.CanConnect())
+         ValidationResult results = validator.Validate(author);
+         if (results.IsValid)
          {
             _libraryDbContext.Author.Add(author);
             _libraryDbContext.SaveChanges();
             return Ok();
          }
-         return BadRequest();
+         return BadRequest(results.Errors);
       }
 
       [HttpGet]
