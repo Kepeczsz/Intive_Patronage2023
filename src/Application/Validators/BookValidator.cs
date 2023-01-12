@@ -5,6 +5,9 @@ namespace Intive_Patronage.Validators
 {
    public class BookValidator : AbstractValidator<Book>
    {
+      /// <summary>
+      /// Setting up rules which validates Book
+      /// </summary>
       public BookValidator()
       {
          RuleFor(b => b.Title)

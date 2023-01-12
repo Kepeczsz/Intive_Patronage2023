@@ -18,6 +18,11 @@ namespace Intive_Patronage.Controllers
          _libraryDbContext = libraryDbContext;
       }
 
+      /// <summary>
+      /// Adds Author via postman using json format.
+      /// </summary>
+      /// <param name="author"></param>
+      /// <returns></returns>
       [HttpPost]
       public ActionResult<Author> AddAuthor([FromBody] Author author)
       {
@@ -30,6 +35,10 @@ namespace Intive_Patronage.Controllers
          return Ok();
       }
 
+      /// <summary>
+      /// Returns All Authors from Database.
+      /// </summary>
+      /// <returns></returns>
       [HttpGet]
       public ActionResult<IEnumerable<Author>> GetAuthors()
       {
@@ -37,6 +46,11 @@ namespace Intive_Patronage.Controllers
          return Ok(authors);
       }
 
+      /// <summary>
+      /// Returns all Authors with given name
+      /// </summary>
+      /// <param name="name"></param>
+      /// <returns></returns>
       [HttpGet]
       [Route("GetAuthorsByName")]
       public ActionResult<IEnumerable<Author>> GetAuthorsByName(string name)

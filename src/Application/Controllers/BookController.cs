@@ -20,13 +20,23 @@ namespace Intive_Patronage.Controllers
          _libraryDbContext = libraryDbContext;
       }
 
+      /// <summary>
+      /// Returns All Books from Database.
+      /// </summary>
+      /// <returns></returns>
       [HttpGet]
       public ActionResult<IEnumerable<Book>> GetBooks()
       {
          var books = _libraryDbContext.Book;
          return Ok(books);
       }
-
+      
+      /// <summary>
+      /// Changes title of book with given Id.
+      /// </summary>
+      /// <param name="Id"></param>
+      /// <param name="newTitle"></param>
+      /// <returns></returns>
       [HttpPut]
       public ActionResult<Book> UpdateBook(int Id, string newTitle)
       {
@@ -35,7 +45,7 @@ namespace Intive_Patronage.Controllers
          {
             return NotFound();
          }
-
+         
          book.Title = newTitle;
          ValidationResult results = validator.Validate(book);
          if (results.IsValid) {
@@ -45,6 +55,11 @@ namespace Intive_Patronage.Controllers
          return BadRequest(results.Errors);
       }
 
+      /// <summary>
+      /// Deletes book with given id.
+      /// </summary>
+      /// <param name="id"></param>
+      /// <returns></returns>
       [HttpDelete("{id}")]
       public ActionResult<Book> DeleteBook([FromRoute] int id)
       {
@@ -58,6 +73,11 @@ namespace Intive_Patronage.Controllers
          return Ok();
       }
 
+      /// <summary>
+      /// Returs Book with given id
+      /// </summary>
+      /// <param name="id"></param>
+      /// <returns></returns>
       [HttpGet("{id}")]
       public ActionResult<Book> FindBook([FromRoute] int id)
       {
@@ -69,6 +89,12 @@ namespace Intive_Patronage.Controllers
          return Ok(book);
       }
 
+      /// <summary>
+      /// Adds Book via postman using json format, AuthorId is a string of authors id. 
+      /// </summary>
+      /// <param name="AuthorId"></param>
+      /// <param name="book"></param>
+      /// <returns></returns>
       [HttpPost]
       public ActionResult<Book> AddBook(string AuthorId, [FromBody] Book book)
       {
