@@ -12,7 +12,7 @@ namespace Intive_Patronage.Controllers
    {
       private readonly LibraryDbContext _libraryDbContext;
       private AuthorValidator validator = new AuthorValidator();
-      
+
       public AuthorController(LibraryDbContext libraryDbContext)
       {
          _libraryDbContext = libraryDbContext;
@@ -28,7 +28,7 @@ namespace Intive_Patronage.Controllers
       {
          ValidationResult results = validator.Validate(author);
          if (!results.IsValid)
-            return BadRequest(results.Errors.ToString());
+            return BadRequest(results.Errors);
 
          _libraryDbContext.Author.Add(author);
          _libraryDbContext.SaveChanges();

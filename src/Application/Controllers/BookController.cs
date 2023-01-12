@@ -13,7 +13,7 @@ namespace Intive_Patronage.Controllers
    public class BookController : ControllerBase
    {
       private readonly LibraryDbContext _libraryDbContext;
-      private BookValidator  validator = new BookValidator();
+      private BookValidator validator = new BookValidator();
 
       public BookController(LibraryDbContext libraryDbContext)
       {
@@ -30,7 +30,7 @@ namespace Intive_Patronage.Controllers
          var books = _libraryDbContext.Book;
          return Ok(books);
       }
-      
+
       /// <summary>
       /// Changes title of book with given Id.
       /// </summary>
@@ -45,10 +45,11 @@ namespace Intive_Patronage.Controllers
          {
             return NotFound();
          }
-         
+
          book.Title = newTitle;
          ValidationResult results = validator.Validate(book);
-         if (results.IsValid) {
+         if (results.IsValid)
+         {
             _libraryDbContext.SaveChanges();
             return Ok();
          }
@@ -66,7 +67,7 @@ namespace Intive_Patronage.Controllers
          var book = _libraryDbContext.Book.Include(e => e.BookAuthors).FirstOrDefault(b => b.BookId == id);
          if (book is null)
          {
-            return BadRequest($"Book with {id} not found");
+            return BadRequest($"This book doesn't exist");
          }
          _libraryDbContext.Book.Remove(book);
          _libraryDbContext.SaveChanges();
@@ -90,7 +91,7 @@ namespace Intive_Patronage.Controllers
       }
 
       /// <summary>
-      /// Adds Book via postman using json format, AuthorId is a string of authors id. 
+      /// Adds Book via postman using json format, AuthorId is a string of authors id, seperated only by "," character. 
       /// </summary>
       /// <param name="AuthorId"></param>
       /// <param name="book"></param>
