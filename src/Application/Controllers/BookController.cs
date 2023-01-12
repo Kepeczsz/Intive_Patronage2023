@@ -35,12 +35,15 @@ namespace Intive_Patronage.Controllers
          {
             return NotFound();
          }
-         if (ModelState.IsValid)
-         {
-            book.Title = newTitle;
+
+         ValidationResult results = validator.Validate(book);
+         
+         book.Title = newTitle;
+         if (results.IsValid) {
             _libraryDbContext.SaveChanges();
             return Ok();
          }
+         
          return BadRequest();
       }
 
