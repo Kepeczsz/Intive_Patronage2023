@@ -36,15 +36,13 @@ namespace Intive_Patronage.Controllers
             return NotFound();
          }
 
-         ValidationResult results = validator.Validate(book);
-         
          book.Title = newTitle;
+         ValidationResult results = validator.Validate(book);
          if (results.IsValid) {
             _libraryDbContext.SaveChanges();
             return Ok();
          }
-         
-         return BadRequest();
+         return BadRequest(results.Errors);
       }
 
       [HttpDelete("{id}")]
