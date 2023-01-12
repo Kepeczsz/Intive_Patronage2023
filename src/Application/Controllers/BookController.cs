@@ -101,7 +101,7 @@ namespace Intive_Patronage.Controllers
       {
          ValidationResult results = validator.Validate(book);
          if (!results.IsValid)
-            return BadRequest(results.Errors.ToString());
+            return BadRequest(results.Errors);
 
          if (!Regex.IsMatch(AuthorId, @"^\d+(,\d+)*$"))
             return BadRequest("AuthorId can not contain letters!");
